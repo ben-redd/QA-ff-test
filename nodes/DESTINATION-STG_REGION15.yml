@@ -1,0 +1,81 @@
+fileVersion: 1
+id: d59ab571-f8f5-4220-84af-c650430a2629
+name: STG_REGION15
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DESTINATION
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d56bbd05-9696-4d40-9621-9784a77908f8
+          stepCounter: d59ab571-f8f5-4220-84af-c650430a2629
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: R_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 80db2392-b279-401d-aefe-5c61a4a4a617
+                stepCounter: d4c12987-115b-4253-baa4-441f6a9a9f29
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1fdda203-804a-46f9-922f-cad0ef09d8d9
+          stepCounter: d59ab571-f8f5-4220-84af-c650430a2629
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: R_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 183b9f05-3afb-49e0-8a21-d957d3912f93
+                stepCounter: d4c12987-115b-4253-baa4-441f6a9a9f29
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c43591f6-e566-49d7-ad5c-03ab2e38c85b
+          stepCounter: d59ab571-f8f5-4220-84af-c650430a2629
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: R_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4f098eeb-2e36-4ead-8ca0-ce638d05b815
+                stepCounter: d4c12987-115b-4253-baa4-441f6a9a9f29
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DESTINATION
+            nodeName: STG_REGION2
+        join:
+          joinCondition: FROM {{ ref('DESTINATION', 'STG_REGION2') }} "STG_REGION2"
+        name: STG_REGION15
+        noLinkRefs: []
+  name: STG_REGION15
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
